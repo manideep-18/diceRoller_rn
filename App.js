@@ -11,6 +11,7 @@ import DiceSix from './assets/dice6.png'
 
 const App=()=>{
   const [uri,setUri]=useState(DiceOne)
+  const [uriTwo,setUriTwo]=useState(DiceTwo)
 
  const  handlePlayGameButton=()=>{
    let randomNumber=Math.floor(Math.random()*6)+1
@@ -18,25 +19,32 @@ const App=()=>{
    switch(randomNumber){
      case 1:
        setUri(DiceOne);
+       setUriTwo(DiceTwo);
        break;
     case 2:
        setUri(DiceTwo);
+       setUriTwo(DiceSix);
        break;
     case 3:
         setUri(DiceThree);
+        setUriTwo(DiceFive);
         break;
     case 4:
           setUri(DiceFour);
+          setUriTwo(DiceOne);
           break;
     case 5:
        setUri(DiceFive);
+       setUriTwo(DiceThree);
        break;
     case 6:
        setUri(DiceSix);
+       setUriTwo(DiceFour);
        break;
       
        default:
          setUri(DiceOne);
+         setUriTwo(DiceTwo);
          break;
 
 
@@ -46,6 +54,7 @@ const App=()=>{
   return(
     <>
     <View style={styles.container}>
+      <Image style={styles.image} source={uriTwo}/>
       <Image style={styles.image} source={uri}/>
       <TouchableOpacity onPress={handlePlayGameButton}>
         <Text style={styles.gamePlayButton}>Play Game</Text>
