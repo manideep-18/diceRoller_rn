@@ -55,9 +55,10 @@ const App=()=>{
     <>
     <View style={styles.container}>
       <Image style={styles.image} source={uriTwo}/>
-      <Image style={styles.image} source={uri}/>
+      
       <TouchableOpacity onPress={handlePlayGameButton}>
-        <Text style={styles.gamePlayButton}>Play Game</Text>
+      <Image style={styles.image} source={uri}/>
+        {/* <Text style={styles.gamePlayButton}>Play Game</Text> */}
       </TouchableOpacity>
     </View>
     </>
